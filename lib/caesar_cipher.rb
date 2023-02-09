@@ -2,7 +2,7 @@ def letters
   'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 end
 
-def convert_to_number(string)
+def convert_to_numbers(string)
   string.split('').map do |char|
     if letters.include? char
       letters.index char
@@ -25,7 +25,7 @@ def apply_shift_factor(array, shift_factor)
 end
 
 def caesar_cipher(string, shift_factor)
-  apply_shift_factor(convert_to_number(string), shift_factor).map do |char|
+  apply_shift_factor(convert_to_numbers(string), shift_factor).map do |char|
     if !char.is_a? Integer
       char
     else
